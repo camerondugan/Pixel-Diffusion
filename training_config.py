@@ -14,7 +14,7 @@ class TrainingConfig:
     gradient_accumulation_steps = 1
     learning_rate = 1e-4
     lr_warmup_steps = 500
-    save_image_epochs = 10
+    save_image_epochs = 5
     save_model_epochs = 30
     mixed_precision = "fp16"  # `no` for float32, `fp16` for automatic mixed precision
     output_dir = "pixel-diffusion"  # the model name locally and on the HF Hub
