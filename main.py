@@ -6,30 +6,10 @@ Goal: To experiment with different diffusion models
         Steps: Define my own network, train, test, repeat
 """
 
-from training_config import config
-
-print("")
-from torchvision import transforms
+import torch
 
 from dataset import dataset
-
-preprocess = transforms.Compose(
-    [
-        transforms.Resize((config.image_size, config.image_size)),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-        transforms.Normalize([0.5], [0.5]),
-    ]
-)
-
-
-def transform(examples):
-    images = [preprocess(image.convert("RGB")) for image in examples["image"]]
-    return {"images": images}
-
-
-dataset.set_transform(transform)
-import torch
+from training_config import config
 
 train_dataloader = torch.utils.data.DataLoader(
     dataset, batch_size=config.train_batch_size, shuffle=True

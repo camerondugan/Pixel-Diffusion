@@ -5,6 +5,7 @@
   env.GREET = "devenv";
   env.LD_LIBRARY_PATH =
     "${pkgs.stdenv.cc.cc.lib}/lib:${pkgs.zstd.out}/lib";
+  env.HSA_OVERRIDE_GFX_VERSION="10.3.0";
 
   # https://devenv.sh/packages/
   packages = [ 
