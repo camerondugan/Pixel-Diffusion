@@ -1,0 +1,8 @@
+accelerate
+datasets
+diffusers
+huggingface_hub
+matplotlib
+numpy
+torch
+torchvision
