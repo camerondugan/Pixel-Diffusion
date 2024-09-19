@@ -50,4 +50,4 @@ from train import train_loop
 args = (config, model, noise_scheduler, optimizer, train_dataloader, lr_scheduler)
 
 notebook_launcher(train_loop, args, num_processes=1)
-model.save_pretrained("pixel-diffusion")
+model.save_pretrained("pixel-diffusion", push_to_hub=config.push_to_hub)
